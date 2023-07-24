@@ -1,5 +1,8 @@
-const userButton = document.getElementById("user-button");
-const pcButton = document.getElementById("pc-button");
+// const userButton = document.getElementById("user-button");
+// const pcButton = document.getElementById("pc-button");
+
+const firstNumber = parseInt(prompt("premi invio"));
+const secondNumber = parseInt(prompt("premi invio"));
 
 const userRandom = Math.floor(Math.random() * 10) + 1;
 const pcRandom = Math.floor(Math.random() * 10) + 1;
