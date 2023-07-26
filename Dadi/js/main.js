@@ -1,20 +1,30 @@
-// const userButton = document.getElementById("user-button");
-// const pcButton = document.getElementById("pc-button");
+const firstNumber = parseInt(prompt("inserisci un numero"));
+const secondNumber = parseInt(prompt("inserisci un numero"));
 
-const firstNumber = parseInt(prompt("premi invio"));
-const secondNumber = parseInt(prompt("premi invio"));
+const winnerText = document.getElementById("winner");
+const userPlayer = document.getElementById("user-roll");
+const pcPlayer = document.getElementById("pc-roll");
 
-const userRandom = Math.floor(Math.random() * 10) + 1;
-const pcRandom = Math.floor(Math.random() * 10) + 1;
+const userRandom = Math.floor(Math.random() * 6) + 1;
+const pcRandom = Math.floor(Math.random() * 6) + 1;
 
-if (isNaN(userButton) || isNaN(pcButton)) {
-	alert("devi inserire un numero da 1-10");
+let winnerEl;
+
+if (isNaN(pcRandom) || isNaN(userRandom)) {
+	alert("devi inserire un numero da 1-6");
 } else {
-	if (userButton > pcButton) {
-		alert("hai vinto");
-	} else if (userButton == pcButton) {
-		alert("questo è un pareggio");
+	if (userRandom > pcRandom) {
+		winnerEl = "hai vinto";
+		// alert("hai vinto");
+	} else if (pcRandom > userRandom) {
+		winnerEl = "ha vinto il pc";
+		// alert("ha vinto il pc");
 	} else {
-		alert("ha vinto il pc");
+		winnerEl = "pareggio";
+		// alert("pareggio");
 	}
 }
+
+userPlayer.innerText = userRandom;
+pcPlayer.innerText = pcRandom;
+winnerText.innerText = winnerEl;
